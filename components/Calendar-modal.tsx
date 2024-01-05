@@ -9,9 +9,10 @@ type CalendarModalType = {
     searchData: initialSearchDataType
     setSearchData: (setData: initialSearchDataType) => void
     handleConfirmClick: () => void
+    setDateOpen: (setDate: boolean) => void
 }
 
-const CalendarModal = ({ dateOpen, searchData, setSearchData, handleConfirmClick }: CalendarModalType) => {
+const CalendarModal = ({ dateOpen, searchData, setSearchData, handleConfirmClick, setDateOpen }: CalendarModalType) => {
   return (
     <Modal animationType="slide" transparent={true} visible={dateOpen}>
       <View
@@ -27,7 +28,7 @@ const CalendarModal = ({ dateOpen, searchData, setSearchData, handleConfirmClick
           style={{
             backgroundColor: "white",
             paddingTop: 10,
-            paddingHorizontal: 30,
+            paddingHorizontal: 50,
             borderTopRightRadius: 30,
             borderTopLeftRadius: 30,
           }}
@@ -49,7 +50,7 @@ const CalendarModal = ({ dateOpen, searchData, setSearchData, handleConfirmClick
               justifyContent: "space-around",
             }}
           >
-            <TouchableOpacity onPress={() => setDateOpen(false)}>
+            <TouchableOpacity onPress={handleConfirmClick}>
               <Text
                 style={{
                   fontSize: 20,
@@ -63,7 +64,7 @@ const CalendarModal = ({ dateOpen, searchData, setSearchData, handleConfirmClick
                 Confirm
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={handleConfirmClick}>
+            <TouchableOpacity onPress={() => setDateOpen(false)}>
               <Text
                 style={{
                   fontSize: 20,
