@@ -2,7 +2,7 @@ import CalendarModal from "@/components/Calendar-modal";
 import RecentSearches from "@/components/tab-search/RecentSearches";
 import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
-import { Modal, SafeAreaView, ScrollView, TextInput } from "react-native";
+import { SafeAreaView, ScrollView, TextInput } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Text, View } from "../../components/Themed";
 
@@ -25,7 +25,6 @@ const initialSearchData = {
 };
 
 export default function Search() {
-  const [chooseActiveItem, setChooseActiveItem] = useState<boolean>(false);
   const [searchData, setSearchData] =
     useState<initialSearchDataType>(initialSearchData);
   const [dateOpen, setDateOpen] = useState<boolean>(false);
@@ -39,15 +38,16 @@ export default function Search() {
       updatedOptions.push(activeItem);
       return updatedOptions;
     });
-    setChooseActiveItem(false)
   };
-
-  const handleSearch = () => {};
 
   const handleConfirmClick = () => {
     if (searchData.date !== "") {
       setDateOpen(false);
     }
+  };
+
+  const handleSearch = () => {
+
   };
 
   return (
@@ -68,20 +68,19 @@ export default function Search() {
             paddingBottom: 25,
           }}
         >
-          <View style={{width: 100}}>
-            <TouchableOpacity onPress={() => setChooseActiveItem((prev) => !prev)}>
-              <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10, backgroundColor: '#2B2B2B',   paddingHorizontal: 20, paddingVertical: 6, borderRadius: 20,  }}>
-                <Text style={{fontSize: 15, }}>{activeItem}</Text>
-                <FontAwesome5 name="angle-down" size={20} style={{ color: 'white' }} />
+          <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 10, }}>
+            <TouchableOpacity onPress={() => handleDropdownOptionClick('Cab')}>
+              <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10,  paddingHorizontal: 20, paddingVertical: 6, borderRadius: 20, backgroundColor: `${activeItem === 'Cab' ? "white" : "#2B2B2B"}`, }}>
+                <Text style={{fontSize: 15, color: `${activeItem === 'Cab' ? "black" : "white"}` }}>Cab</Text>
               </View>
             </TouchableOpacity>
             {dropdownOptions.map((option) => (
               <TouchableOpacity
                 key={option}
                 onPress={() => handleDropdownOptionClick(option)}
-                style={{display: `${chooseActiveItem ? "flex" : "none"}` , position: 'absolute', justifyContent: 'center', alignItems: "center",  backgroundColor: 'white', paddingHorizontal: 20, paddingVertical: 6, borderRadius: 20, marginTop: 5, width: '100%', zIndex: 20 }}
+                style={{justifyContent: 'center', alignItems: "center", backgroundColor: `${activeItem === 'Train' ? "white" : "#2B2B2B"}`,  paddingHorizontal: 20, paddingVertical: 6, borderRadius: 20, zIndex: 20, }}
               >
-                <Text style={{fontSize: 15, backgroundColor: 'white', color: 'black'}}>{option}</Text>
+                <Text style={{fontSize: 15, color: `${activeItem === 'Train' ? "black" : "white"}` }}>Train</Text>
               </TouchableOpacity>
             ))}
           </View>

@@ -15,36 +15,6 @@ const tempData = [
     NoOfMembers: 4,
     joinLink: '/(tabs)/group',
   },
-  {
-    groupName: 'Hello Cabs',
-    imageUrl: 'https://ucarecdn.com/a69288bf-2c13-46ed-bf35-88b4cf5313ae/-/preview/1000x400/-/format/auto/-/quality/smart_retina/',
-    NoOfMembers: 4,
-    joinLink: '/(tabs)/group',
-  },
-  {
-    groupName: 'Hello Cabs',
-    imageUrl: 'https://ucarecdn.com/a69288bf-2c13-46ed-bf35-88b4cf5313ae/-/preview/1000x400/-/format/auto/-/quality/smart_retina/',
-    NoOfMembers: 4,
-    joinLink: '/(tabs)/group',
-  },
-  {
-    groupName: 'Hello Cabs',
-    imageUrl: 'https://ucarecdn.com/a69288bf-2c13-46ed-bf35-88b4cf5313ae/-/preview/1000x400/-/format/auto/-/quality/smart_retina/',
-    NoOfMembers: 4,
-    joinLink: '/(tabs)/group',
-  },
-  {
-    groupName: 'Hello Cabs',
-    imageUrl: 'https://ucarecdn.com/a69288bf-2c13-46ed-bf35-88b4cf5313ae/-/preview/1000x400/-/format/auto/-/quality/smart_retina/',
-    NoOfMembers: 4,
-    joinLink: '/(tabs)/group',
-  },
-  {
-    groupName: 'Hello Cabs',
-    imageUrl: 'https://ucarecdn.com/a69288bf-2c13-46ed-bf35-88b4cf5313ae/-/preview/1000x400/-/format/auto/-/quality/smart_retina/',
-    NoOfMembers: 4,
-    joinLink: '/(tabs)/group',
-  },
 ]
 
 const RecentSearches = () => {
